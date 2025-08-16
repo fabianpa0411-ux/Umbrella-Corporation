@@ -1,0 +1,173 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Umbrella Corporation - Acceso Restringido</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .login-container, .dashboard {
+      max-width: 500px;
+      margin: 100px auto;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #222;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+    button {
+      background: linear-gradient(to right, #900, #c00);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      width: 95%;
+    }
+    button:hover { background: linear-gradient(to right, #b00, #e00); }
+    .advertencia {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #f55;
+    }
+    .hidden { display: none; }
+    .section { 
+      display: none; 
+      padding: 20px; 
+      max-width: 700px; 
+      margin: 40px auto; 
+      background-color: #1a1a1a;  
+      border-radius: 8px; 
+      line-height: 1.5; 
+      text-align: left;
+      color: white;  /* texto blanco */
+    }
+    .menu-btn {
+      display: block;
+      background: linear-gradient(to right, #900, #c00);
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .menu-btn:hover { background: linear-gradient(to right, #b00, #e00); }
+  </style>
+</head>
+<body>
+  <!-- LOGIN -->
+  <div class="login-container" id="login-container">
+    <h2>Umbrella Corporation</h2>
+    <p>Acceso Restringido</p>
+    <input type="text" id="username" placeholder="Usuario">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="login()">Ingresar</button>
+    <p class="advertencia">⚠ Advertencia: Acceso restringido a personal autorizado de la Corporación Umbrella. Todo acceso no autorizado será registrado.</p>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="dashboard hidden" id="dashboard">
+    <h2>Panel de Control</h2>
+    <a href="#" class="menu-btn" onclick="showSection('tvirus')">T-Virus</a>
+    <a href="#" class="menu-btn" onclick="showSection('gvirus')">G-Virus</a>
+    <a href="#" class="menu-btn" onclick="showSection('protocolo')">Protocolos</a>
+    <a href="#" class="menu-btn" onclick="showSection('mutaciones')">Mutaciones</a>
+    <a href="#" class="menu-btn" onclick="showSection('uss')">U.S.S</a>
+    <a href="#" class="menu-btn" onclick="showSection('ubcs')">U.B.C.S</a>
+    <a href="#" class="menu-btn" onclick="showSection('ufsu')">U.F.S.U</a>
+  </div>
+
+  <!-- SECCIONES -->
+  <div class="section" id="tvirus">
+    <h2>T-Virus</h2>
+    <p>El T-Virus fue diseñado como un agente biológico para reanimar tejido muerto y generar mutaciones extremas. 
+    Fue el núcleo de múltiples incidentes de biohazard en Raccoon City. Su principal característica es la capacidad de 
+    transformar humanos en B.O.W (Bio Organic Weapons).</p>
+    <button onclick="back()">Volver</button>
+  </div>
+
+  <div class="section" id="gvirus">
+    <h2>G-Virus</h2>
+    <p>El G-Virus es una evolución del T-Virus, creado por el Dr. William Birkin. 
+    Genera mutaciones constantes e incontrolables, capaces de regenerar el cuerpo 
+    y adaptarse a casi cualquier daño. Sus huéspedes pierden todo control racional.</p>
+    <button onclick="back()">Volver</button>
+  </div>
+
+  <div class="section" id="protocolo">
+    <h2>Protocolos</h2>
+    <p>Los protocolos de contención incluyen:</p>
+    <ul>
+      <li>Encubrimiento de incidentes biológicos.</li>
+      <li>Eliminación de testigos.</li>
+      <li>Despliegue inmediato de U.S.S y U.B.C.S.</li>
+    </ul>
+    <button onclick="back()">Volver</button>
+  </div>
+
+  <div class="section" id="mutaciones">
+    <h2>Mutaciones</h2>
+    <p>Los virus Umbrella generan mutaciones que incluyen aumento de fuerza, 
+    regeneración celular, y pérdida de rasgos humanos. Ejemplos: Lickers, Tyrants, Nemesis.</p>
+    <button onclick="back()">Volver</button>
+  </div>
+
+  <div class="section" id="uss">
+    <h2>U.S.S (Umbrella Security Service)</h2>
+    <p>Unidad élite de fuerzas especiales de Umbrella. 
+    Su función principal es eliminar pruebas, controlar situaciones de fuga y proteger intereses corporativos.</p>
+    <button onclick="back()">Volver</button>
+  </div>
+
+  <div class="section" id="ubcs">
+    <h2>U.B.C.S (Umbrella Biohazard Countermeasure Service)</h2>
+    <p>Mercenarios contratados para contener incidentes biológicos. 
+    Usados como carne de cañón en Raccoon City. La mayoría de sus miembros no sobrevivieron.</p>
+    <button onclick="back()">Volver</button>
+  </div>
+
+  <div class="section" id="ufsu">
+    <h2>U.F.S.U (Umbrella Firearms Suppression Unit)</h2>
+    <p>División encargada del desarrollo y prueba de armamento especializado 
+    contra B.O.Ws y control de disturbios. Generalmente trabajan en secreto en laboratorios ocultos.</p>
+    <button onclick="back()">Volver</button>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      if (user === "umbrella" && pass === "Beta") {
+        document.getElementById("login-container").classList.add("hidden");
+        document.getElementById("dashboard").classList.remove("hidden");
+      } else {
+        alert("Credenciales incorrectas");
+      }
+    }
+
+    function showSection(id) {
+      document.getElementById("dashboard").classList.add("hidden");
+      document.getElementById(id).style.display = "block";
+    }
+
+    function back() {
+      const sections = document.querySelectorAll(".section");
+      sections.forEach(s => s.style.display = "none");
+      document.getElementById("dashboard").classList.remove("hidden");
+    }
+  </script>
+</body>
